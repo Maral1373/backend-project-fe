@@ -2,7 +2,7 @@
 import { Outlet, Link } from "react-router-dom";
 import { useState } from "react";
 import * as React from "react";
-import "./login.css";
+import "../login/login.css";
 import background from "./img/background.jpeg";
 
 const User = () => {
@@ -21,22 +21,20 @@ const User = () => {
   };
 
   const registerUser = async () => {
-    const request = await fetch("http://127.0.0.1:4400/login", {
+    const request = await fetch("http://127.0.0.1:4400/signup", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       method: "POST",
       mode: "cors",
+      credentials: "include",
       body: JSON.stringify({
         name,
         username,
         password,
       }),
     });
-    if (!request.ok) {
-      throw new Error("Login failed");
-    }
     const result = await request.json();
     console.log(result);
   };
@@ -56,10 +54,19 @@ const User = () => {
         }}
       >
         <div className="box-center">
-          <h1 className="login-txt">Login</h1>
+          <h1 className="login-txt">Sign In</h1>
         </div>
         <main>
           <form className="input-center" onSubmit={onSubmit}>
+            <label htmlFor="name"></label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              value={name}
+              onChange={onChange}
+            />
             <label htmlFor="username"></label>
             <input
               type="text"
@@ -83,16 +90,11 @@ const User = () => {
                 to="/books"
                 style={{ textDecoration: "none", color: "#495057" }}
               >
-                Login
+                Create Account
               </Link>
             </button>
           </form>
         </main>
-
-        <h6 className="signup">Don't have a account?</h6>
-        <Link to="/login/signup" style={{ color: "#fff", marginLeft: "7px" }}>
-          SIGN UP
-        </Link>
       </div>
     </>
   );

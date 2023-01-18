@@ -32,28 +32,6 @@ input {
     color: rgb(131, 90, 24);
 }
 
-.register {
-    margin-top: 30px;
-    padding: 15px;
-    font-weight: bold;
-    font-size: x-large;
-    cursor: pointer;
-    outline: none;
-    /* background-color: #04AA6D; */
-    /* border: none; */
-    /* border-radius: 15px; */
-    /* box-shadow: 0 9px #999; */
-}
-
-.button:hover {
-    background-color: #eae0cd;
-}
-
-.button:active {
-    background-color: #e7d1a8;
-}
-
-
 .background {
     display: flex;
     align-items: center;
@@ -63,15 +41,39 @@ input {
     /* border: 2px solid green; */
 }
 
-.login {
+.login-txt {
     /* border: 2px solid green; */
     margin-bottom: 45rem;
     width: 200px;
     height: 50px;
 }
 
+.login-btn {
+    margin-top: 30px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: x-large;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-/* .container-btn {
-    text-align: center;
-    border: 3px solid green;
-} */
+.login-btn:hover {
+    background-color: #eae0cd;
+}
+
+.login-btn:active {
+    background-color: #e7d1a8;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    margin-left: -24rem;
+    font-size: 15px;
+    color: rgb(102, 42, 166);
+    cursor: pointer;
+    /* border: 3px solid green; */
+
+}
